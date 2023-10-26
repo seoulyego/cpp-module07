@@ -14,12 +14,12 @@ class Array {
 		Array();
 		Array(unsigned int n);
 		Array(const Array& obj);
-		Array&	operator=(const Array& obj);
+		Array& operator=(const Array& obj);
 		~Array();
 
-		unsigned int	size() const;
-		T& 				operator[](unsigned int index);
-		const T& 		operator[](unsigned int index) const;
+		unsigned int size() const;
+		T& 	operator[](unsigned int index);
+		const T& operator[](unsigned int index) const;
 };
 
 # include "Array.tpp"
