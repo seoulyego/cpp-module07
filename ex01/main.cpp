@@ -3,13 +3,13 @@
 #include <iostream>
 
 template <typename T>
-void print(T &x) {
-	std::cout << x << std::endl;
+void print(T& x) {
+	std::cout << x;
 }
 
 template <typename T>
-void print(T const &x) {
-	std::cout << x << std::endl;
+void print(const T& x) {
+	std::cout << x;
 }
 
 int main(void) {
@@ -21,7 +21,9 @@ int main(void) {
 	}
 
 	iter(arr, 10, print);
+	std::cout << std::endl;
 	iter(arr2, 12, print);
+	std::cout << std::endl;
 
 	return 0;
 }
