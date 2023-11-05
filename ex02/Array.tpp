@@ -17,20 +17,19 @@ template <typename T>
 Array<T>::Array(const Array<T>& obj)
 : _size(obj.size()) {
 	_array = NULL;
-	*this = obj;
+	if (this != &obj)
+		*this = obj;
 }
 
 template <typename T>
 Array<T>& Array<T>::operator=(const Array<T>& obj) {
 	if (this != &obj) {
-		if (_array) {
+		if (_array)
 			delete [] _array;
-		}
 		_size = obj.size();
 		_array = new T[_size];
-		for (std::size_t i = 0; i < _size; i++) {
+		for (unsigned int i = 0; i < _size; i++)
 			_array[i] = obj[i];
-		}
 	}
 	return *this;
 }
@@ -48,15 +47,15 @@ unsigned int Array<T>::size() const {
 
 template <typename T>
 T&	Array<T>::operator[](unsigned int index) {
-	if (index < 0 || index >= _size)
-		throw std::exception();
+	if (index >= _size)
+		throw std::out_of_range("Out of range.");
 	return _array[index];
 }
 
 template <typename T>
 const T& Array<T>::operator[](unsigned int index) const {
-	if (index < 0 || index >= _size)
-		throw std::exception();
+	if (index >= _size)
+		throw std::out_of_range("Out of range.");
 	return _array[index];
 }
 

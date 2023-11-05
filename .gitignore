@@ -36,6 +36,7 @@
 .vscode/
 .obj/
 .cache/
+test.cpp
 
 templete
 iter

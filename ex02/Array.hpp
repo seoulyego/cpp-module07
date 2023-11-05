@@ -6,10 +6,6 @@
 
 template <typename T>
 class Array {
-	private:
-		unsigned int	_size;
-		T*				_array;
-
 	public:
 		Array();
 		Array(unsigned int n);
@@ -20,6 +16,10 @@ class Array {
 		unsigned int size() const;
 		T& 	operator[](unsigned int index);
 		const T& operator[](unsigned int index) const;
+
+	private:
+		unsigned int	_size;
+		T*				_array;
 };
 
 # include "Array.tpp"
